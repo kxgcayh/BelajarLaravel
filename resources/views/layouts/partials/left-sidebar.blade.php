@@ -19,11 +19,11 @@
                     <a href="javascript:void(0);" class="waves-effect">
                         <i class="ti-home"></i>
                         <span>
-                            {{__('Manajemen Karyawan')}}
+                            {{__('Data Karyawan')}}
                         </span>
                         <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="#">Data Karyawan</a></li>
+                        <li><a href="#">Daftar</a></li>
                     </ul>
                 </li>
             </ul>
