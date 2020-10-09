@@ -1,14 +1,14 @@
 @extends('layouts.master')
 {{-- Title Bar --}}
-@section('title') {{ __('Home') }} @endsection
+@section('title') {{ __('Home | Koperasi') }} @endsection
 {{-- Page Title --}}
 @section('page-title') {{ __('Home') }} @endsection
 {{-- Bread Crumb --}}
 @section('breadCrumb')
 <x-bread-crumb>
-    @breadCrumbItem(['link' => '#'], ['content' => 'Coba'])
-    @breadCrumbItem(['link' => '#'], ['content' => 'cobacoba'])
-    @breadCrumbActive(['content' => 'Active'])
+    {{-- @breadCrumbItem(['link' => '#'], ['content' => 'Coba']) --}}
+    {{-- @breadCrumbItem(['link' => '#'], ['content' => 'cobacoba']) --}}
+    {{-- @breadCrumbActive(['content' => 'Active']) --}}
 </x-bread-crumb>
 @endsection
 {{-- Page Content --}}
