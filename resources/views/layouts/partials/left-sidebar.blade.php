@@ -4,14 +4,27 @@
         {{-- Divider --}}
         <div id="sidebar-menu">
             <ul>
-                <li class="text-muted menu-title">Navigation</li>
+                <li class="text-muted menu-title">
+                    {{__('Admin')}}
+                </li>
                 <li class="has_sub">
                     <a href="{{ route('home')}}">
                         <i class="ti-home"></i>
                         <span>
-                            Home
+                            {{__('Home')}}
                         </span>
                     </a>
+                </li>
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="ti-home"></i>
+                        <span>
+                            {{_('Manajemen Karyawan')}}
+                        </span>
+                        <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Data Karyawan</a></li>
+                    </ul>
                 </li>
             </ul>
             <div class="clearfix"></div>
