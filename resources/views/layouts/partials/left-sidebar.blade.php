@@ -19,7 +19,7 @@
                     <a href="javascript:void(0);" class="waves-effect">
                         <i class="ti-home"></i>
                         <span>
-                            {{_('Manajemen Karyawan')}}
+                            {{__('Manajemen Karyawan')}}
                         </span>
                         <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
