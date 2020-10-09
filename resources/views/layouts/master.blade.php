@@ -19,8 +19,7 @@
 
 <body class="fixed-left">
     <div id="wrapper">
-        @include('layouts.partials.topbar')
-        @include('layouts.partials.left-sidebar')
+        @topBar @leftSideBar
         <div class="content-page">
             {{-- Start content --}}
             <div class="content">
@@ -31,26 +30,18 @@
                             <h4 class="page-title">
                                 @yield('page-title')
                             </h4>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="#">Ubold</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="#">UI Kit</a>
-                                </li>
-                                <li class="breadcrumb-item active">Cards</li>
-                            </ol>
+                            @yield('breadCrumb')
                         </div>
                     </div>
                     {{-- Content Start Here --}}
                     @yield('content')
                 </div>
             </div>
-            @include('layouts.partials.footer')
+            @footer
         </div>
-        @include('layouts.partials.right-sidebar')
+        @rightSideBar
     </div>
-    @include('layouts.partials.footer-script')
+    @footerScript
 </body>
 
 </html>
