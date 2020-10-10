@@ -17,13 +17,17 @@
                 </li>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect">
-                        <i class="ti-home"></i>
+                        <i class="ti-package"></i>
                         <span>
-                            {{__('Data Karyawan')}}
+                            {{__('Account Control')}}
                         </span>
                         <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="#">Daftar</a></li>
+                        <li>
+                            <a href="{{ route('roles.index') }}">
+                                {{__('Roles and Permission')}}
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

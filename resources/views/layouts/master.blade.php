@@ -10,10 +10,18 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('material')}}/plugins/morris/morris.css">
+    <link href="{{ asset('material')}}/plugins/morris/morris.css" rel="stylesheet">
     <link href="{{ asset('material')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('material')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('material')}}/assets/css/style.css" rel="stylesheet" type="text/css" />
+    {{-- DataTables --}}
+    <link href="{{ asset('material')}}/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('material')}}/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('material')}}/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('material')}}/plugins/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <script src="{{ asset('material')}}/assets/js/modernizr.min.js"></script>
 </head>
 

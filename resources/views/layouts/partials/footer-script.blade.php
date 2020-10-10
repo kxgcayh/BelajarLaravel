@@ -15,11 +15,33 @@
 <script src="{{ asset('material')}}/assets/js/jquery.scrollTo.min.js"></script>
 <script src="{{ asset('material')}}/plugins/peity/jquery.peity.min.js"></script>
 <script src="{{ asset('material')}}/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="{{ asset('material')}}/plugins/counterup/jquery.counterup.min.js"></script>
 <script src="{{ asset('material')}}/plugins/morris/morris.min.js"></script>
+<script src="{{ asset('material')}}/plugins/counterup/jquery.counterup.min.js"></script>
 <script src="{{ asset('material')}}/plugins/raphael/raphael-min.js"></script>
 <script src="{{ asset('material')}}/plugins/jquery-knob/jquery.knob.js"></script>
 <script src="{{ asset('material')}}/assets/pages/jquery.dashboard.js"></script>
+<script src="{{ asset('material')}}/plugins/bootstrap-table/js/bootstrap-table.js"></script>
+<script src="{{ asset('material')}}/assets/pages/jquery.bs-table.js"></script>
+
+{{-- Required datatable js --}}
+<script src="{{ asset('material')}}/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="{{ asset('material')}}/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+{{-- Buttons examples --}}
+<script src="{{ asset('material')}}/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="{{ asset('material')}}/plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="{{ asset('material')}}/plugins/datatables/jszip.min.js"></script>
+<script src="{{ asset('material')}}/plugins/datatables/pdfmake.min.js"></script>
+<script src="{{ asset('material')}}/plugins/datatables/vfs_fonts.js"></script>
+<script src="{{ asset('material')}}/plugins/datatables/buttons.html5.min.js"></script>
+<script src="{{ asset('material')}}/plugins/datatables/buttons.print.min.js"></script>
+{{-- Key Tables --}}
+<script src="{{ asset('material')}}/plugins/datatables/dataTables.keyTable.min.js"></script>
+{{-- Responsive examples --}}
+<script src="{{ asset('material')}}/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="{{ asset('material')}}/plugins/datatables/responsive.bootstrap4.min.js"></script>
+{{-- Selection table --}}
+<script src="{{ asset('material')}}/plugins/datatables/dataTables.select.min.js"></script>
+{{-- jQuery --}}
 <script src="{{ asset('material')}}/assets/js/jquery.core.js"></script>
 <script src="{{ asset('material')}}/assets/js/jquery.app.js"></script>
 <script type="text/javascript">
