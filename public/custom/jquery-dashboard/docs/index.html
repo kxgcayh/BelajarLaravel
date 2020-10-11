@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jquery Dashboard Demo</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <script src="../dist/jquery.dashboard.core.js" charset="utf-8"></script>
+    <script src="../dist/jquery.dashboard.templates.js" charset="utf-8"></script>
+    <script src="../dist/jquery.dashboard.jqueryui.js" charset="utf-8"></script>
+    <script src="../dist/jquery.dashboard.samples.js" charset="utf-8"></script>
+    <style type="text/css">
+        .placee {
+            background-color: #f5f5f5;
+            border: 1px dashed #ddd;
+            border-radius: 3px;
+            min-height: 40px;
+        }
+
+        .panel-default > .panel-heading {
+            cursor: move;
+        }
+
+        .list-group-item > .list-group-item-heading > .fa,
+        .panel-default > .panel-heading > .fa {
+            cursor: pointer;
+        }
+
+        #widget-add-modal .modal-body > .row:first-child {
+            margin-bottom: 15px;
+        }
+
+        .panel-additional {
+            background-color: #f5f5f5;
+            padding: 4px 0;
+        }
+
+        .panel-additional .fa {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>
+                Dashboard
+                <i class="fa fa-plus-square pull-right"></i>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row dashboard"></div>
+        </div>
+    </div>
+</div>
+
+<script type="application/javascript">
+    $(document).ready(function () {
+        // initialize dashboard services
+        var service = Dashboard.core.default();
+        // register sample widgets
+        Dashboard.samples.default(service);
+        // create dashboard view and refresh list
+        var dashboard = $('.dashboard').dashboard({
+            dashboardService: service
+        }).dashboard("refresh");
+        // initialize widget add dialog
+        $('h1 .fa.fa-plus-square').dashboardWidgetDialog({
+            dashboardService: service,
+            addCallback: function(widgetData) {
+                dashboard.dashboard("addWidget", widgetData);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -3,8 +3,9 @@
 </script>
 {{-- jQuery --}}
 <script src="{{ asset('material')}}/assets/js/jquery.min.js"></script>
-<script src="{{ asset('material')}}/assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
-<script src="{{ asset('material')}}/assets/js/bootstrap.min.js"></script>
+{{-- Popper for Bootstrap --}}
+<script src="{{ asset('custom/popperJs')}}/dist/umd/popper.min.js"></script>
+<script src="{{ asset('custom/bootstrap4')}}/dist/js/bootstrap.min.js"></script>
 <script src="{{ asset('material')}}/assets/js/detect.js"></script>
 <script src="{{ asset('material')}}/assets/js/fastclick.js"></script>
 <script src="{{ asset('material')}}/assets/js/jquery.slimscroll.js"></script>
@@ -15,11 +16,11 @@
 <script src="{{ asset('material')}}/assets/js/jquery.scrollTo.min.js"></script>
 <script src="{{ asset('material')}}/plugins/peity/jquery.peity.min.js"></script>
 <script src="{{ asset('material')}}/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="{{ asset('material')}}/plugins/morris/morris.min.js"></script>
+<script src="{{ asset('custom/morris')}}/morris.min.js"></script>
 <script src="{{ asset('material')}}/plugins/counterup/jquery.counterup.min.js"></script>
 <script src="{{ asset('material')}}/plugins/raphael/raphael-min.js"></script>
 <script src="{{ asset('material')}}/plugins/jquery-knob/jquery.knob.js"></script>
-<script src="{{ asset('material')}}/assets/pages/jquery.dashboard.js"></script>
+<script src="{{ asset('custom/jquery-dashboard')}}/dist/jquery.dashboard.core.min.js"></script>
 <script src="{{ asset('material')}}/plugins/bootstrap-table/js/bootstrap-table.js"></script>
 <script src="{{ asset('material')}}/assets/pages/jquery.bs-table.js"></script>
 
@@ -30,7 +31,6 @@
 <script src="{{ asset('material')}}/plugins/datatables/dataTables.buttons.min.js"></script>
 <script src="{{ asset('material')}}/plugins/datatables/buttons.bootstrap4.min.js"></script>
 <script src="{{ asset('material')}}/plugins/datatables/jszip.min.js"></script>
-<script src="{{ asset('material')}}/plugins/datatables/pdfmake.min.js"></script>
 <script src="{{ asset('material')}}/plugins/datatables/vfs_fonts.js"></script>
 <script src="{{ asset('material')}}/plugins/datatables/buttons.html5.min.js"></script>
 <script src="{{ asset('material')}}/plugins/datatables/buttons.print.min.js"></script>
@@ -54,4 +54,4 @@
     });
 </script>
 {{-- Custom Script --}}
-@yield('script')
+@stack('script')

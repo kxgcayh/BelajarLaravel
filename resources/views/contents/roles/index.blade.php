@@ -61,7 +61,8 @@
     </x-slot>
 </x-card>
 
-@section('script')
+@push('script')
+<script src="{{ asset('custom/sweetalert2') }}/dist/sweetalert2.all.min.js"></script>
 <script type="text/javascript">
     $(function () {
         $.ajaxSetup({
@@ -115,6 +116,16 @@
                     $('#roleForm').trigger('reset');
                     $('#saveBtn').html('Save');
                     $('#roleModal').modal('hide');
+
+                    // Sweet Alert
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
                     dtTable.draw();
                 },
                 error: function (data) {
@@ -140,6 +151,6 @@
         });
     }); //End Function
 </script>
-@endsection
+@endpush
 
 @endsection
