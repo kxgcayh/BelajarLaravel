@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\UserManagement;
 
+use Alert;
 use DataTables;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -34,16 +35,17 @@ class RoleController extends Controller
 
         Role::updateOrCreate(
             ['id' => $request->id],
-            [
-                'name' => $request->name
-            ]
+            ['name' => $request->name]
         );
-        return response()->json(['success' => 'Role Created Successfully']);
+
+        $success = alert()->success('Title', 'Lorem Lorem Lorem');
+        return response()->json(['success' => $success]);
     }
 
     public function destroy($id)
     {
         Role::findOrFail($id)->delete();
+        Alert::question('Question Title', 'Question Message');
         return response()->json(['success' => 'Role Deleted Successfully']);
     }
 

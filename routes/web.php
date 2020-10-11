@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Management Role
 Route::resource('roles', 'UserManagement\RoleController')
     ->only(['index', 'store', 'edit', 'destroy']);
+// Management Permission
+Route::resource('permissions', 'UserManagement\PermissionController')
+->only(['index', 'store', 'edit', 'destroy']);

@@ -25,7 +25,12 @@
                     <ul class="list-unstyled">
                         <li>
                             <a href="{{ route('roles.index') }}">
-                                {{__('Roles and Permission')}}
+                                {{__('Management Roles')}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('permissions.index') }}">
+                                {{__('Management Permission')}}
                             </a>
                         </li>
                     </ul>

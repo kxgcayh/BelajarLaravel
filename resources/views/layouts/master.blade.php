@@ -43,6 +43,7 @@
                     </div>
                     {{-- Content Start Here --}}
                     @yield('content')
+                    @include('sweetalert::alert')
                 </div>
             </div>
             @footer

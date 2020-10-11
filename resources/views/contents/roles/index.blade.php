@@ -2,7 +2,7 @@
 {{-- Title Bar --}}
 @section('title') {{ __('Role | Koperasi') }} @endsection
 {{-- Page Title --}}
-@section('page-title') {{ __('Management Role') }} @endsection
+@section('page-title') {{ __('Account Control') }} @endsection
 {{-- Bread Crumb --}}
 @section('breadCrumb')
 <x-bread-crumb>
@@ -16,9 +16,9 @@
     <x-slot name="title">
         <div class="col-sm-12">
             <div class="pull-left">
-                <h4 class="m-t-0 header-title">List of Role</h4>
+                <h4 class="m-t-0 header-title">{{__('List of Role')}}</h4>
                 <p class="text-muted m-b-30 font-13">
-                    Role is very usefull for User Account Control
+                    {{__('Role is very usefull for User Account Control')}}
                 </p>
             </div>
             <div class="pull-right">
@@ -53,7 +53,8 @@
                     <th>Role Name</th>
                     <th>Guard</th>
                     <th>Created At</th>
-                    <th width="280px">Action</th>
+                    <th>Updated At</th>
+                    <th width="110px">Action</th>
                 </tr>
             </thead>
         </table>
@@ -74,10 +75,11 @@
             serverSide: true,
             ajax: "{{ route('roles.index') }}",
             columns: [
-                { data: 'DT_RowIndex', name: 'DT_RowIndex' },
+                { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
                 { data: 'name', name: 'name'},
                 { data: 'guard_name', name: 'guard_name'},
                 { data: 'created_at', name: 'created_at'},
+                { data: 'updated_at', name: 'updated_at'},
                 { data: 'action', name: 'action', orderable: false, searchable: false },
             ]
         });
@@ -124,10 +126,10 @@
 
         $('body').on('click', '.deleteRole', function () {
             let id = $(this).data('id');
-            confirm("Are you sure to Delete?");
+            // confirm("Are you sure to Delete?");
             $.ajax({
                 type: "DELETE",
-                url: "{{ route('roles.store') }}" + "/" + id,
+                url: "{{ url('roles') }}" + "/" + id,
                 success: function (data) {
                     dtTable.draw();
                 },
