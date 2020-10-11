@@ -116,20 +116,22 @@
                     $('#roleForm').trigger('reset');
                     $('#saveBtn').html('Save');
                     $('#roleModal').modal('hide');
-
-                    // Sweet Alert
                     Swal.fire({
-                        position: 'top-end',
                         icon: 'success',
                         title: 'Success',
+                        text: "Operation Successfully",
                         showConfirmButton: false,
                         timer: 1500
                     });
-
                     dtTable.draw();
                 },
                 error: function (data) {
-                    console.log('Error:', data);
+                    // console.log('Error:', data);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Insert data failed!',
+                    })
                     $('#saveBtn').html('Save');
                 }
             });
@@ -138,16 +140,33 @@
         $('body').on('click', '.deleteRole', function () {
             let id = $(this).data('id');
             // confirm("Are you sure to Delete?");
-            $.ajax({
-                type: "DELETE",
-                url: "{{ url('roles') }}" + "/" + id,
-                success: function (data) {
-                    dtTable.draw();
-                },
-                error: function (data) {
-                    console.log('Error:', data);
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "DELETE",
+                        url: "{{ url('roles') }}" + "/" + id,
+                        success: function (data) {
+                            dtTable.draw();
+                        },
+                        error: function (data) {
+                            console.log('Error:', data);
+                        }
+                    });
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
                 }
-            });
+            })
         });
     }); //End Function
 </script>
