@@ -5,6 +5,7 @@
 <script src="{{ asset('custom/jquery')}}/dist/jquery.min.js"></script>
 <script src="{{ asset('custom/popperJs')}}/dist/umd/popper.min.js"></script> {{-- Popper for Bootstrap --}}
 <script src="{{ asset('custom/bootstrap4')}}/dist/js/bootstrap.min.js"></script>
+{{-- <script src="{{ asset('material')}}/assets/js/bootstrap.min.js"></script> --}}
 <script src="{{ asset('material')}}/assets/js/detect.js"></script>
 <script src="{{ asset('material')}}/assets/js/fastclick.js"></script>
 <script src="{{ asset('material')}}/assets/js/jquery.slimscroll.js"></script>

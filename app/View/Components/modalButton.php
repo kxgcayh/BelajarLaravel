@@ -6,7 +6,9 @@ use Illuminate\View\Component;
 
 class modalButton extends Component
 {
+    public $id;
     public $color;
+    public $href;
     public $targetId;
     public $onclick;
 
@@ -15,9 +17,11 @@ class modalButton extends Component
      *
      * @return void
      */
-    public function __construct($color, $targetId, $onclick)
+    public function __construct($id, $color, $href, $targetId, $onclick)
     {
+        $this->id = $id;
         $this->color = $color;
+        $this->href = $href;
         $this->targetId = $targetId;
         $this->onclick = $onclick;
     }

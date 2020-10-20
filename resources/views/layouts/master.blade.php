@@ -12,6 +12,7 @@
     <title>@yield('title')</title>
     <link href="{{ asset('material')}}/plugins/morris/morris.css" rel="stylesheet">
     <link href="{{ asset('custom/bootstrap4')}}/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    {{-- <link href="{{ asset('material')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> --}}
     <link href="{{ asset('material')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('material')}}/assets/css/style.css" rel="stylesheet" type="text/css" />
     {{-- DataTables --}}

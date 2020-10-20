@@ -6,7 +6,7 @@
             <a href="#" class="logo">
                 <i class="icon-magnet icon-c-logo"></i>
                 <span>
-                    {{__('Koperasi')}}
+                    {{__('B-LAJAR')}}
                 </span>
             </a>
         </div>
@@ -29,6 +29,8 @@
                     {{-- item --}}
                     <div class="dropdown-item noti-title">
                         <h5 class="text-overflow"><small>Welcome {{ Auth::user()->name }}</small> </h5>
+                        {{-- Syntax below is used for validate when delete user --}}
+                        <p hidden id="currentUser">{{ Auth::user()->id }}</p>
                     </div>
                     {{-- item --}}
                     <a href="javascript:void(0);" class="dropdown-item notify-item">

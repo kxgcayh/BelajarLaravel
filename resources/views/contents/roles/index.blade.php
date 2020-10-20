@@ -1,6 +1,6 @@
 @extends('layouts.master')
 {{-- Title Bar --}}
-@section('title') {{ __('Role | Koperasi') }} @endsection
+@section('title') {{ __('Role | B-Lajar') }} @endsection
 {{-- Page Title --}}
 @section('page-title') {{ __('Role List') }} @endsection
 {{-- Bread Crumb --}}
@@ -23,9 +23,12 @@
                 </p>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary waves-effect waves-light" href="javascript:void(0)" id="createNewRole">
+                {{-- <a class="btn btn-primary waves-effect waves-light" href="javascript:void(0)" id="createNewRole">
                     {{__('Create')}}
-                </a>
+                </a> --}}
+                <x-modal-button color="primary" id="createNewRole">
+                    {{__('Create')}}
+                </x-modal-button>
             </div>
         </div>
         {{-- Modal: Create --}}
