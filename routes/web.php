@@ -29,3 +29,12 @@ Route::resource('permissions', 'UserManagement\PermissionController')
 // Management User
 Route::resource('users', 'UserManagement\UserController')
     ->only(['index', 'store', 'edit', 'destroy']);
+Route::post('insert-user', function () {
+    $data = Input::except('csrf-token');
+    DB::table('users')->insert($data);
+
+    $id = DB::getPdo()->lastInsertId();
+
+    $insertedData = DB::table('users')->where('id', $id)->first();
+    return response()->json(['success' => $insertedData]);
+});

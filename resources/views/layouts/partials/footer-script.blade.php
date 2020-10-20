@@ -2,7 +2,6 @@
     var resizefunc = [];
 </script>
 {{-- jQuery --}}
-{{-- <script src="{{ asset('material')}}/assets/js/jquery.min.js"></script> --}}
 <script src="{{ asset('custom/jquery')}}/dist/jquery.min.js"></script>
 <script src="{{ asset('custom/popperJs')}}/dist/umd/popper.min.js"></script> {{-- Popper for Bootstrap --}}
 <script src="{{ asset('custom/bootstrap4')}}/dist/js/bootstrap.min.js"></script>
@@ -41,6 +40,8 @@
 <script src="{{ asset('material')}}/plugins/datatables/responsive.bootstrap4.min.js"></script>
 {{-- Selection table --}}
 <script src="{{ asset('material')}}/plugins/datatables/dataTables.select.min.js"></script>
+{{-- SweetAlert2 --}}
+<script src="{{ asset('custom/sweetalert2') }}/dist/sweetalert2.all.min.js"></script>
 {{-- jQuery --}}
 <script src="{{ asset('material')}}/assets/js/jquery.core.js"></script>
 <script src="{{ asset('material')}}/assets/js/jquery.app.js"></script>
