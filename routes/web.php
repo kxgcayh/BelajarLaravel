@@ -26,3 +26,6 @@ Route::resource('roles', 'UserManagement\RoleController')
 // Management Permission
 Route::resource('permissions', 'UserManagement\PermissionController')
 ->only(['index', 'store', 'edit', 'destroy']);
+// Management User
+Route::resource('users', 'UserManagement\UserController')
+    ->only(['index', 'store', 'edit', 'destroy']);

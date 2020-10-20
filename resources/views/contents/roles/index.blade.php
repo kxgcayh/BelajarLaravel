@@ -2,11 +2,12 @@
 {{-- Title Bar --}}
 @section('title') {{ __('Role | Koperasi') }} @endsection
 {{-- Page Title --}}
-@section('page-title') {{ __('Account Control') }} @endsection
+@section('page-title') {{ __('Role List') }} @endsection
 {{-- Bread Crumb --}}
 @section('breadCrumb')
 <x-bread-crumb>
     @breadCrumbItem(['link' => '#'], ['content' => 'Home'])
+    @breadCrumbItem(['link' => '#'], ['content' => 'Account Control'])
     @breadCrumbActive(['content' => 'Role'])
 </x-bread-crumb>
 @endsection

@@ -24,6 +24,11 @@
                         <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li>
+                            <a href="{{ route('users.index') }}">
+                                {{__('Management Users')}}
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('roles.index') }}">
                                 {{__('Management Roles')}}
                             </a>
