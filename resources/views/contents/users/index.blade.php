@@ -49,6 +49,18 @@
                     <i class="bar"></i>
                 </div>
                 <div class="form-group-custom">
+                    <select class="form-control {{ $errors->has('id') ? 'is-invalid':'' }}" name="roles[]" id="roles"
+                        required>
+                        <option value=""></option>
+                        @foreach ($roles as $role)
+                        <option value="{{ $role->id }}">
+                            {{ ucfirst($role->name) }}
+                        </option>
+                        @endforeach
+                    </select>
+                    <label class="control-label">Role:</label><i class="bar"></i>
+                </div>
+                <div class="form-group-custom">
                     <input type="password" name="password" id="password" maxlength="50" required>
                     <label class="control-label" for="password">
                         {{__('Password')}}

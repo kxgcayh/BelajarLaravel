@@ -6,13 +6,20 @@ use Hash;
 use DataTables;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         $users = User::latest()->get();
+        $roles = Role::orderBy('name', 'ASC')->get();
         if (request()->ajax()) {
             return DataTables::of($users)
                 ->addIndexColumn()
@@ -24,20 +31,22 @@ class UserController extends Controller
                 ->rawColumns(['action'])
                 ->make('true');
         }
-        return view('contents.users.index', compact('users'));
+        return view('contents.users.index', compact('users', 'roles'));
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'email' => 'required|unique:users,email',
-            'password' => 'required',
+            'name' => 'required|max:60',
+            'email' => 'required',
+            'password' => 'required|min:8',
+            'roles' => 'required'
         ]);
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
         $user = User::updateOrCreate($input);
+        $user->assignRole($request->input('roles'));
 
         return response()->json($user);
     }

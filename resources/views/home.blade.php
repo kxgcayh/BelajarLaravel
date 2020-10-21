@@ -1,6 +1,6 @@
 @extends('layouts.master')
 {{-- Title Bar --}}
-@section('title') {{ __('Home | Koperasi') }} @endsection
+@section('title') {{ __('Home | B-Lajar') }} @endsection
 {{-- Page Title --}}
 @section('page-title') {{ __('Home') }} @endsection
 {{-- Bread Crumb --}}
@@ -24,7 +24,7 @@
                 {{ session('status') }}
             </div>
             @endif
-            {{__('You are logged in!')}}
+            {{__('Hello ')}} {{ Auth::user()->name }}
         </p>
     </x-slot>
 </x-card>
