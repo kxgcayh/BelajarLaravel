@@ -40,6 +40,12 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{ route('attendances.index') }}">
+                        <i class="ti-package"></i>
+                        {{__('Attended')}}
+                    </a>
+                </li>
             </ul>
             <div class="clearfix"></div>
         </div>

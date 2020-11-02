@@ -26,6 +26,7 @@ Route::resource('roles', 'UserManagement\RoleController')
 // Management Permission
 Route::resource('permissions', 'UserManagement\PermissionController')
 ->only(['index', 'store', 'edit', 'destroy']);
+
 // Management User
 Route::resource('users', 'UserManagement\UserController')
     ->only(['index', 'store', 'edit', 'destroy']);
@@ -38,3 +39,7 @@ Route::post('insert-user', function () {
     $insertedData = DB::table('users')->where('id', $id)->first();
     return response()->json(['success' => $insertedData]);
 });
+
+// Management Attend List
+Route::resource('attendances', 'System\AttendanceController')
+    ->only(['index', 'store', 'edit', 'destroy']);

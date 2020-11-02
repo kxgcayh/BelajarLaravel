@@ -19,9 +19,9 @@ class UserSeeder extends Seeder
             'name' => 'Kautsar Al Bana',
             'email' => 'admin@admin.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('admin123'),
+            'password' => bcrypt('password'),
         ]);
-        $role = Role::create(['name' => 'Superuser']);
+        $role = Role::create(['name' => 'Superadmin']);
         $role->givePermissionTo(Permission::all());
         $user->assignRole($role->id);
     }
