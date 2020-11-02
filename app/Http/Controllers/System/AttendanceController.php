@@ -23,6 +23,6 @@ class AttendanceController extends Controller
                 ->rawColumns(['action'])
                 ->make('true');
         }
-        return view('contents.attendances.index2');
+        return view('contents.attendances.index');
     }
 }

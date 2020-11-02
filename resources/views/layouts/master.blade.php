@@ -48,7 +48,6 @@
             </div>
             @footer
         </div>
-        @rightSideBar
     </div>
     @footerScript
 </body>

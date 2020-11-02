@@ -31,7 +31,8 @@
     </x-slot>
     {{-- <x-alert type="success" :message"$message" /> --}}
     <x-slot name="content">
-        <table id="tblUser" class="table table-bordered table-bordered nowrap" cellspacing="0" width="100%">
+        <table id="tblAttend" class="table table-bordered table-bordered dt-responsive nowrap" cellspacing="0"
+            width="100%">
             <thead>
                 <tr>
                     <th>#</th>
@@ -41,30 +42,32 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-                @forelse ($attendances as $row)
-                <tr>
-                    <td>{{ ++$no }}</td>
-                    <td>{{ $row->users['name'] }}</td>
-                    <td>{{ $row->attended_at }}</td>
-                    <td>{{ $row->returned_at }}</td>
-                    <td>
-                        <button class="btn btn-info waves-effect waves-light">Return</button>
-                    </td>
-                </tr>
-                @empty
-                <tr>
-                    <td colspan="5">There is nobody attended today</td>
-                </tr>
-                @endforelse
-            </tbody>
         </table>
     </x-slot>
 </x-card>
 
 @push('script')
 <script type="text/javascript">
-    //
+    $(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        let dtTable = $('#tblAttend').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('attendances.index') }}",
+            columns: [
+                { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false, class: 'text-center' },
+                { data: 'users.name', name: 'users.name'},
+                { data: 'attended_at', name: 'attended_at'},
+                { data: 'returned_at', name: 'returned_at'},
+                { data: 'action', name: 'action', orderable: false, searchable: false },
+            ]
+        });
+    });
 </script>
 @endpush
 

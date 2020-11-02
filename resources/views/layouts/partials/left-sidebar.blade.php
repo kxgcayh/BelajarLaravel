@@ -40,10 +40,12 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="has_sub">
                     <a href="{{ route('attendances.index') }}">
                         <i class="ti-package"></i>
-                        {{__('Attended')}}
+                        <span>
+                            {{__('Attended')}}
+                        </span>
                     </a>
                 </li>
             </ul>
