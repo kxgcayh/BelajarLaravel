@@ -33,21 +33,21 @@
                                 {{__('Management Roles')}}
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('permissions.index') }}">
-                                {{__('Management Permission')}}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has_sub">
-                    <a href="{{ route('attendances.index') }}">
-                        <i class="ti-package"></i>
-                        <span>
-                            {{__('Attended')}}
-                        </span>
-                    </a>
-                </li>
+                        {{__('Management Permission')}}
+                        </a>
+                </li> --}}
+            </ul>
+            </li>
+            <li class="has_sub">
+                <a href="{{ route('attendances.index') }}">
+                    <i class="ti-package"></i>
+                    <span>
+                        {{__('Attended')}}
+                    </span>
+                </a>
+            </li>
             </ul>
             <div class="clearfix"></div>
         </div>

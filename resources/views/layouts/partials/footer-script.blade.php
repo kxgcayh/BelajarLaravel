@@ -46,6 +46,7 @@
 {{-- jQuery --}}
 <script src="{{ asset('material')}}/assets/js/jquery.core.js"></script>
 <script src="{{ asset('material')}}/assets/js/jquery.app.js"></script>
+@stack('bot-script')
 <script type="text/javascript">
     jQuery(document).ready(function($) {
         $('.counter').counterUp({

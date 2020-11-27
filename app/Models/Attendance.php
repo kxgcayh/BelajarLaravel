@@ -16,6 +16,10 @@ class Attendance extends Model
         return $this->belongsTo(User::class, 'id');
     }
 
+    protected $dates = [
+        'attended_at', 'returned_at'
+    ];
+
     const CREATED_AT = 'attended_at';
     const UPDATED_AT = 'returned_at';
 }

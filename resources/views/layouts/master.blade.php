@@ -24,6 +24,7 @@
         type="text/css" />
     <link href="{{ asset('material')}}/plugins/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <script src="{{ asset('material')}}/assets/js/modernizr.min.js"></script>
+    @stack('top-script')
 </head>
 
 <body class="fixed-left">

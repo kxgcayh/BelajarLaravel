@@ -23,9 +23,6 @@
                 </p>
             </div>
             <div class="pull-right">
-                {{-- <a class="btn btn-primary waves-effect waves-light" href="javascript:void(0)" id="createNewRole">
-                    {{__('Create')}}
-                </a> --}}
                 <x-modal-button color="primary" id="createNewRole">
                     {{__('Create')}}
                 </x-modal-button>
@@ -47,7 +44,6 @@
             </form>
         </x-modal-responsive>
     </x-slot>
-    {{-- <x-alert type="success" :message"$message" /> --}}
     <x-slot name="content">
         <table id="tblRole" class="table table-bordered table-bordered dt-responsive nowrap" cellspacing="0"
             width="100%">
