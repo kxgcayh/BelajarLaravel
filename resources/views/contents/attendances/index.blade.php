@@ -85,12 +85,6 @@
             }
         });
 
-        $('.input-daterange').datepicker({
-            todayBtn: 'linked',
-            format: 'yyyy-mm-dd',
-            autoclose: true
-        });
-
         load_data();
 
         function load_data(from_date = '', to_date = '') {
