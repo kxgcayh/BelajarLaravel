@@ -14,9 +14,9 @@ class AttendanceController extends Controller
     {
         if (request()->ajax()) {
             if (empty($request->from_date)) {
-                $data = Attendance::with('users')->get();
+                $data = Attendance::with('users')->latest()->get();
             } else {
-                $data = DB::table('attendances')
+                $data = Attendance::with('users')
                     ->whereBetween('attended_at', [$request->from_date, $request->to_date])
                     ->get();
             }
@@ -29,10 +29,10 @@ class AttendanceController extends Controller
                     return $btn;
                 })
                 ->editColumn('attended_at', function ($data) {
-                    return $data->attended_at->format('Y/m/d - H:i:s');
+                    return $data->attended_at->format('d/m/Y - H:i:s');
                 })
                 ->editColumn('returned_at', function ($data) {
-                    return $data->returned_at->format('Y/m/d - H:i:s');
+                    return $data->returned_at->format('d/m/Y - H:i:s');
                 })
                 ->rawColumns(['action'])
                 ->make('true');

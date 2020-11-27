@@ -38,37 +38,38 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-5">
                         <div class="input-group">
                             <input class="form-control" type="date" name="from_date" id="from_date">
                         </div>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-5">
                         <div class="input-group">
                             <input class="form-control" type="date" name="to_date" id="to_date">
                         </div>
                     </div>
-                    <div class="form-group col-md-4">
-                        <button type="button" class="btn btn-primary waves-effect waves-light"
-                            id="filter">Filter</button>
-                        <button type="button" class="btn btn-primary waves-effect waves-light"
+                    <div class="form-group col-md-2">
+                        <button type="button" class="btn btn-info waves-effect waves-light" id="filter">Filter</button>
+                        <button type="button" class="btn btn-info waves-effect waves-light"
                             id="refresh">Refresh</button>
                     </div>
                 </div>
             </div>
         </div>
-        <table id="tblAttend" class="table table-bordered table-bordered dt-responsive nowrap" cellspacing="0"
-            width="100%">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Attended At</th>
-                    <th>Returned At</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-        </table>
+        <div class="row">
+            <table id="tblAttend" class="table table-bordered table-bordered dt-responsive nowrap" cellspacing="0"
+                width="100%">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Attended At</th>
+                        <th>Returned At</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </x-slot>
 </x-card>
 
