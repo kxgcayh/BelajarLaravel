@@ -8,17 +8,16 @@ class modalResponsive extends Component
 {
     public $modalId;
     public $titleId;
-    public $title;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($modalId, $titleId, $title)
+    public function __construct($modalId, $titleId)
     {
+        $this->modalId = $modalId;
         $this->titleId = $titleId;
-        $this->title = $title;
     }
 
     /**

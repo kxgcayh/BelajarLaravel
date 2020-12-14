@@ -8,22 +8,16 @@ class modalButton extends Component
 {
     public $id;
     public $color;
-    public $href;
-    public $targetId;
-    public $onclick;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($id, $color, $href, $targetId, $onclick)
+    public function __construct($id, $color)
     {
         $this->id = $id;
         $this->color = $color;
-        $this->href = $href;
-        $this->targetId = $targetId;
-        $this->onclick = $onclick;
     }
 
     /**

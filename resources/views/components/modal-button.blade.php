@@ -1,7 +1,6 @@
 {{-- Button Modal --}}
 <button type="button" class="btn btn-{{ $color }} waves-effect waves-light" data-toggle="modal"
-    data-target="#{{ $targetId ?? '' }}" onClick="{{ $onclick ?? '' }}" id="{{ $id }}"
-    href="{{ $href ?? 'javascript:void(0);' }}">
+    data-target="#{{ $targetId ?? '' }}" onClick="{{ $onclick ?? '' }}" id="{{ $id }}">
     {{ $slot }}
 </button>
 
